@@ -98,10 +98,10 @@ module.exports = function (grunt) {
                 mainnet: {
                     name: 'mainnet',
                     code: 'W',
-                    server: 'https://nodes.wavesplatform.com',
-                    coinomat: 'https://coinomat.com',
-                    matcher: 'https://matcher.wavesplatform.com',
-                    datafeed: 'https://marketdata.wavesplatform.com'
+                    server: 'https://sg.katalystcoin.com',
+                    coinomat: '',
+                    matcher: 'https://matcher.katalystcoin.com',
+                    datafeed: 'https://marketapi.katalystcoin.com/api-1'
                 },
                 devnet: {
                     name: 'devnet',
@@ -378,22 +378,22 @@ module.exports = function (grunt) {
                 dest: 'distr/devel/js/bundle.js'
             }
         },
-        uglify: {
-            options: {
-                mangle: false
-            },
-            distr: {
-                files: {
-                    'distr/<%= pkg.name %>-<%= meta.configurations.testnet.name %>-<%= pkg.version %>.min.js': ['distr/<%= pkg.name %>-<%= meta.configurations.testnet.name %>-<%= pkg.version %>.js'],
-                    'distr/<%= pkg.name %>-<%= meta.configurations.mainnet.name %>-<%= pkg.version %>.min.js': ['distr/<%= pkg.name %>-<%= meta.configurations.mainnet.name %>-<%= pkg.version %>.js'],
-                    'distr/<%= pkg.name %>-<%= meta.configurations.devnet.name %>-<%= pkg.version %>.min.js': ['distr/<%= pkg.name %>-<%= meta.configurations.devnet.name %>-<%= pkg.version %>.js'],
-                    'distr/<%= pkg.name %>-<%= meta.configurations.chrome.mainnet.name %>-<%= pkg.version %>.min.js': ['distr/<%= pkg.name %>-<%= meta.configurations.chrome.mainnet.name %>-<%= pkg.version %>.js'],
-                    'distr/<%= pkg.name %>-<%= meta.configurations.chrome.testnet.name %>-<%= pkg.version %>.min.js': ['distr/<%= pkg.name %>-<%= meta.configurations.chrome.testnet.name %>-<%= pkg.version %>.js'],
-                    'distr/<%= pkg.name %>-<%= meta.configurations.desktop.mainnet.name %>-<%= pkg.version %>.min.js': ['distr/<%= pkg.name %>-<%= meta.configurations.desktop.mainnet.name %>-<%= pkg.version %>.js'],
-                    'distr/<%= pkg.name %>-<%= meta.configurations.desktop.testnet.name %>-<%= pkg.version %>.min.js': ['distr/<%= pkg.name %>-<%= meta.configurations.desktop.testnet.name %>-<%= pkg.version %>.js']
-                }
-            }
-        },
+        // uglify: {
+        //     options: {
+        //         mangle: false
+        //     },
+        //     distr: {
+        //         files: {
+        //             'distr/<%= pkg.name %>-<%= meta.configurations.testnet.name %>-<%= pkg.version %>.min.js': ['distr/<%= pkg.name %>-<%= meta.configurations.testnet.name %>-<%= pkg.version %>.js'],
+        //             'distr/<%= pkg.name %>-<%= meta.configurations.mainnet.name %>-<%= pkg.version %>.min.js': ['distr/<%= pkg.name %>-<%= meta.configurations.mainnet.name %>-<%= pkg.version %>.js'],
+        //             'distr/<%= pkg.name %>-<%= meta.configurations.devnet.name %>-<%= pkg.version %>.min.js': ['distr/<%= pkg.name %>-<%= meta.configurations.devnet.name %>-<%= pkg.version %>.js'],
+        //             'distr/<%= pkg.name %>-<%= meta.configurations.chrome.mainnet.name %>-<%= pkg.version %>.min.js': ['distr/<%= pkg.name %>-<%= meta.configurations.chrome.mainnet.name %>-<%= pkg.version %>.js'],
+        //             'distr/<%= pkg.name %>-<%= meta.configurations.chrome.testnet.name %>-<%= pkg.version %>.min.js': ['distr/<%= pkg.name %>-<%= meta.configurations.chrome.testnet.name %>-<%= pkg.version %>.js'],
+        //             'distr/<%= pkg.name %>-<%= meta.configurations.desktop.mainnet.name %>-<%= pkg.version %>.min.js': ['distr/<%= pkg.name %>-<%= meta.configurations.desktop.mainnet.name %>-<%= pkg.version %>.js'],
+        //             'distr/<%= pkg.name %>-<%= meta.configurations.desktop.testnet.name %>-<%= pkg.version %>.min.js': ['distr/<%= pkg.name %>-<%= meta.configurations.desktop.testnet.name %>-<%= pkg.version %>.js']
+        //         }
+        //     }
+        // },
         clean: ['build/**', 'distr/**'],
         copy: {
             options: {

@@ -1,6 +1,6 @@
 {
   "name": "waves-lite-client",
-  "version": "0.5.21-kat",
+  "version": "0.5.21",
   "description": "A lite client for the Waves platform",
   "repository": {
     "type": "git",
@@ -44,8 +44,5 @@
   },
   "scripts": {
     "postinstall": "bower install"
-  },
-  "dependencies": {
-    "bower": "^1.8.2"
   }
 }
