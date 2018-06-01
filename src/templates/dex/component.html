@@ -1,3 +1,4 @@
+
 <div class="exchange">
   <div class="choice">
     <div class="picker-widget">
@@ -15,13 +16,29 @@
                               hidden-asset="$ctrl.pair.amountAsset"
                               picked-asset="$ctrl.pair.priceAsset"></waves-dex-asset-picker>
     </div>
-  </div>
+</div>
 
-  <div class="charts">
+  <div class="charts centerizedChart">
     <waves-dex-chart pair="$ctrl.pair"></waves-dex-chart>
   </div>
 
+
+
+<div class="dex-container">
   <div class="workplace">
+
+      <div class="user-orders">
+      <waves-dex-order-creator pair="$ctrl.pair"
+                               submit="$ctrl.createOrder"
+                               last-price="$ctrl.lastTradePrice"
+                               buy-values="$ctrl.buyFormValues"
+                               sell-values="$ctrl.sellFormValues"></waves-dex-order-creator>
+      <waves-dex-user-orders pair="$ctrl.pair"
+                             orders="$ctrl.userOrders"
+                             cancel-order="$ctrl.cancelOrder"></waves-dex-user-orders>
+    </div>
+
+
     <div class="orderbooks">
       <div class="orderbook">
         <waves-dex-orderbook type="buy"
@@ -42,17 +59,11 @@
                            trades="$ctrl.tradeHistory"></waves-dex-history>
       </div>
     </div>
-    <div class="user-orders">
-      <waves-dex-order-creator pair="$ctrl.pair"
-                               submit="$ctrl.createOrder"
-                               last-price="$ctrl.lastTradePrice"
-                               buy-values="$ctrl.buyFormValues"
-                               sell-values="$ctrl.sellFormValues"></waves-dex-order-creator>
-      <waves-dex-user-orders pair="$ctrl.pair"
-                             orders="$ctrl.userOrders"
-                             cancel-order="$ctrl.cancelOrder"></waves-dex-user-orders>
-    </div>
+    
+
+
   </div>
+</div>
 </div>
 
 <aside class="pairs-lists">

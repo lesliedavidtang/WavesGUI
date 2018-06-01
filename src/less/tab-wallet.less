@@ -33,37 +33,34 @@
   -ms-flex: 1;
   flex: 1;
   min-width: 260px;
-  max-width: 300px;
-  height: 220px;
+  max-width: 26px;
+  height: 300px;
   border: 1px solid rgb(220, 220, 220);
   margin: 5px;
   padding: 10px;
   border-radius: 20px 20px 20px 20px;
   overflow: hidden;
+  align-content: center;
   & img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 90%;
-    z-index: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
   }
 }
 
 .walletBox > .details {
-  text-align: right;
-  float: right;
-  z-index: 100 !important;
-  position: relative;
+  text-align: center;
   margin-top: 10px;
 }
 
 .wB-name {
   display: block;
   position: relative;
-  float: right;
+  float: center;
   z-index: 100 !important;
   font-family: @font-engo;
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: @color-navy-blue;
 }
 
@@ -71,8 +68,8 @@
   display: block;
   width: 100%;
   position: relative;
-  text-align: right;
-  float: right;
+  text-align: center;
+  float: center;
   z-index: 100 !important;
   font-family: @font-wesli;
   font-size: 1rem;
@@ -83,12 +80,12 @@
   display: block;
   position: relative;
   width: 100%;
-  text-align: right;
-  float: right;
+  text-align: center;
+  float: center;
   z-index: 99 !important;
   font-family: @font-sparta;
   font-weight: bold;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   color: @color-navy-blue;
 }
 
@@ -96,18 +93,27 @@
   display: block;
   position: relative;
   width: 100%;
-  text-align: right;
+  text-align: center;
   float: right;
   z-index: 99 !important;
   font-family: @font-sparta;
   font-weight: bold;
-  font-size: 1.75rem;
+  font-size: 1rem;
   color: @color-navy-blue;
   line-height: .5;
   letter-spacing: -2px;
   opacity: .5;
 }
 
+hr{
+  border-color: #ced3d9;
+  margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: 25%;
+    margin-right: 25%;
+    border-style: inset;
+    border-width: 1px;
+}
 
 /* BALANCE BOXES BUTTONS SECTION */
 
@@ -130,17 +136,18 @@
   width: 32.4%;
   height: 80%;
   margin: .45%;
-  background: @color-navy-blue;
+  background: @color-button;
   overflow: hidden;
   font-family: @font-wesli;
-  font-size: 1rem;
-  color: @color-white;
+  font-size: 0.9rem;
+  font-weight: normal;
+  color: @color-navy-blue;
   border: none;
   outline: none;
   cursor: pointer;
 
   &:hover {
-    background: @color-soft-orange;
+    background: @color-pale-blue;
   }
 
   & p {
@@ -162,4 +169,51 @@
 
 .wB-butTrade {
   border-radius: 2px 2px 16px 2px;
+}
+
+
+.walletContainer{
+  font-family: "Lato", "serif";
+  font-size: 16px;
+  text-align: center;
+  text-transform: capitalize;
+  overflow-wrap: break-word;
+  color: #0b2a4a;
+  
+  align-content: center;
+
+  border: 2px solid #ced3d9;
+    
+  background-color: #ffffff;
+  
+  width: 200px;
+  height:300px;
+}
+
+.decimal{
+  font-size: 14px;
+}
+
+.walletAction{
+  font-family: "Lato", "serif";
+  font-size: 15px;
+  text-transform: uppercase;
+  color: #0b2a4a;
+  
+  border: 2px solid #ced3d9;
+  background-color: #ced3d9;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.walletHr{
+  border-color: #ced3d9;
+  margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: 25%;
+    margin-right: 25%;
+    border-style: inset;
+    border-width: 1px;
 }

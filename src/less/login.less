@@ -16,6 +16,8 @@
 
 #AccHeader {
   margin-bottom: 1rem;
+  background: @color-turquoise; 
+  color: @color-navy-blue;
 }
 
 #accounts h2,
@@ -32,6 +34,8 @@
 .loginAccountDiv {
   font-size: 1.25rem;
   height: 55px;
+  // background: @color-turquoise; 
+  color: @color-navy-blue;
 
   & > span {
     opacity: .5;
@@ -43,11 +47,13 @@
   }
 
   & .clipSpan {
-    color: red;
+    color: @color-turquoise;
   }
 
   & > .wButton:hover {
     border: none;
+    background: @color-turquoise; 
+    color: @color-navy-blue; 
     opacity: 1;
   }
 }
@@ -126,4 +132,38 @@
 .loginAccountDiv {
   display: block;
   height: inherit;
+}
+
+.buttonNew{
+  background: @color-turquoise; 
+  color: @color-white;
+        &:hover {
+        background: @color-light-grey;
+    }
+}
+
+.linkNew{
+  color: @color-navy-blue;
+      &:hover {
+        color: @color-turquoise;
+    }
+}
+
+.bgNew{
+  // background: @color-lightest-grey; 
+  color: @color-turquoise;
+        &:hover {
+        color: @color-grey;
+      }
+}
+
+.turquoise{
+  background: @color-turquoise;
+      &:hover {
+        color: @color-navy-blue;
+      }
+}
+
+.turquoiseWord{
+  color: @color-turquoise;
 }

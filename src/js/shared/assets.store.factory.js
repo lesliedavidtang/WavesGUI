@@ -2,27 +2,15 @@
     'use strict';
 
     // TODO : move to the future `appState` service.
-    var currencyKAT = Currency.create({
-        id: 'DSakmDaduNHXgAXKP4LM7358yZYduWg9VGALA9auDck8',
-        displayName: 'Katalyst',
-        shortName: 'KAT',
-        precision: 8,
-        verified: false
-    });
 
     var predefinedAssets = [
-        Currency.BTC,
-        Currency.USD,
-        Currency.EUR,
-        Currency.CNY,
-        Currency.WCT,
-        Currency.MRT,
-        currencyKAT
+        Currency.KDEX,
+        Currency.CKR,
+        Currency.SGD
     ];
 
     angular
         .module('app.shared')
-        .constant('currency.KAT', currencyKAT)
         .factory('assetStoreFactory', [
             '$q', 'apiService', 'matcherApiService', function ($q, apiService, matcherApiService) {
                 function AssetStore(address) {
@@ -49,7 +37,7 @@
                         })
                         .then(apiService.address.balance.bind(apiService.address, self.address))
                         .then(function (response) {
-                            self.balances[Currency.WAVES.id] = Money.fromCoins(response.balance, Currency.WAVES);
+                            self.balances[Currency.KDEX.id] = Money.fromCoins(response.balance, Currency.KDEX);
                         });
                 };
 

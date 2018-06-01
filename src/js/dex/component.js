@@ -5,8 +5,7 @@
         HISTORY_LIMIT = 50;
 
     function DexController($scope, $interval, applicationContext, assetStoreFactory, datafeedApiService,
-                           dexOrderService, dexOrderbookService, notificationService, utilsService, dialogService,
-                           currencyKat) {
+                           dexOrderService, dexOrderbookService, notificationService, utilsService, dialogService) {
 
         var ctrl = this,
             intervalPromise,
@@ -21,25 +20,15 @@
         ctrl.assetsList = [];
 
         ctrl.pair = {
-            amountAsset: Currency.WAVES,
-            priceAsset: Currency.BTC
+            amountAsset: Currency.KDEX,
+            priceAsset: Currency.CKR
         };
 
         emptyDataFields();
 
         var favoritePairs = [
-            { amountAsset: Currency.WAVES, priceAsset: Currency.BTC },
-            { amountAsset: Currency.WAVES, priceAsset: Currency.USD },
-            { amountAsset: Currency.WAVES, priceAsset: Currency.EUR },
-            { amountAsset: Currency.BTC, priceAsset: Currency.EUR },
-            { amountAsset: Currency.BTC, priceAsset: Currency.USD },
-            { amountAsset: Currency.ETH, priceAsset: Currency.WAVES },
-            { amountAsset: Currency.ETH, priceAsset: Currency.BTC },
-            { amountAsset: Currency.ETH, priceAsset: Currency.USD },
-            { amountAsset: currencyKat, priceAsset: Currency.WAVES },
-            { amountAsset: Currency.MRT, priceAsset: Currency.WAVES },
-            { amountAsset: Currency.MRT, priceAsset: Currency.BTC },
-            { amountAsset: Currency.EUR, priceAsset: Currency.USD }
+             { amountAsset: Currency.KDEX, priceAsset: Currency.CKR },
+            { amountAsset: Currency.KDEX, priceAsset: Currency.SGD },
         ];
 
         ctrl.favoritePairs = favoritePairs;
@@ -87,7 +76,7 @@
                     orderType: type,
                     amount: Money.fromTokens(amount, ctrl.pair.amountAsset),
                     price: OrderPrice.fromTokens(price, ctrl.pair),
-                    fee: Money.fromTokens(fee, Currency.WAVES)
+                    fee: Money.fromTokens(fee, Currency.KDEX)
                 }, sender)
                 .then(function () {
                     refreshOrderbooks();
@@ -280,8 +269,7 @@
     }
 
     DexController.$inject = ['$scope', '$interval', 'applicationContext', 'assetStoreFactory', 'datafeedApiService',
-        'dexOrderService', 'dexOrderbookService', 'notificationService', 'utilsService', 'dialogService',
-        'currency.KAT'];
+        'dexOrderService', 'dexOrderbookService', 'notificationService', 'utilsService', 'dialogService'];
 
     angular
         .module('app.dex')
